@@ -52,12 +52,13 @@ function Cancer()
         I should just be able to compare values... well it's hard to explain without a picture... whatever I'm just talking to myself anyways haha I'm lonely
     ]]
 
-    local FrontFaceZ = math.sqrt((InputPositionZ + InputSizeZ / 2)^2)
-    local BackFaceZ = math.sqrt((InputPositionZ - InputSizeZ / 2)^2)
-    local TopFaceY = math.sqrt((InputPositionY + InputSizeY / 2)^2)
-    local BottomFaceY = math.sqrt((InputPositionY - InputSizeY / 2)^2)
-    local RightFaceX = math.sqrt((InputPositionX + InputSizeX / 2)^2)
-    local LeftFaceX = math.sqrt((InputPositionX - InputSizeX / 2)^2)
+    local FrontFaceZ = math.abs((InputPositionZ + InputSizeZ / 2))
+    local BackFaceZ = math.abs((InputPositionZ - InputSizeZ / 2))
+    local TopFaceY = math.abs((InputPositionY + InputSizeY / 2))
+    local BottomFaceY = math.abs((InputPositionY - InputSizeY / 2))
+    local RightFaceX = math.abs((InputPositionX + InputSizeX / 2))
+    local LeftFaceX = math.abs((InputPositionX - InputSizeX / 2))
+    --absolute value of each var
 
     -- Just check which side it is closest to; I CANT EXPLAIN IN WORDS ITS A PICTURE
     local Offset, Face = FrontFaceZ - HitPosZ, 'Front' -- Give default value, this very well could be the solution
